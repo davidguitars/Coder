@@ -1,8 +1,12 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 const CartWidget = () => {
   return (
-    <FontAwesomeIcon icon="fa-solid fa-cart-shopping-fast" />
+    <>
+    <i class="fa fa-shopping-cart"></i>
+    </>
   )
 }
 
