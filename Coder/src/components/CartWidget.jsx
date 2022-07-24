@@ -1,11 +1,10 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 const CartWidget = () => {
   return (
     <>
-    <i class="fa fa-shopping-cart"></i>
+    <i className="fa fa-shopping-cart"></i>
     </>
   )
 }
