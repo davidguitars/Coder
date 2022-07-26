@@ -59,15 +59,3 @@ const NavbarContent = () => {
 }
 
 export default NavbarContent
-
-
-
-
-
-/* <div className='navbarContainer'>
-<button className='navbarContent'>Home</button>
-<button className='navbarContent'>Quienes Somos</button>
-<button className='navbarContent'>Contacto</button> 
-<CartWidget />
-
- </div> */

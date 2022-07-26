@@ -7,10 +7,13 @@ import ItemCount from './components/ItemCount'
 
 
 
+
+
 function App() {
   
 
   return (
+    <>
     <div className="App">
       <header>
       <NavbarContent />
@@ -18,6 +21,7 @@ function App() {
       <div className="bodyContent">
       <ItemListContainer />
       <ItemCount />
+
      
       </div>
    <section> 
@@ -25,6 +29,7 @@ function App() {
    </section>
   
     </div>
+    </>
     
   )
 }
