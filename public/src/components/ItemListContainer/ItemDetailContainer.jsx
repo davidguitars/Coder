@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import ItemList from './ItemDetail';
+import ItemDetail from './ItemDetail';
 
-const ItemDetailContainer = () => {
+const ItemListContainer = () => {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState({})
 
   useEffect(() => {
       setProducts([
@@ -107,14 +107,17 @@ const ItemDetailContainer = () => {
 
         
       ])
-  }, [])
+  }, {})
 
 
 
   return (
     <div>
-    <ItemList products={products}/>
+    <ItemDetail products={products}/>
      </div>
     
   )
 }
+
+export default ItemListContainer
+
