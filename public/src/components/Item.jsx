@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 
 
-const Item = ({ image, title, price, stock, item }) => {
+const Item = ({ image, title, price,stock, id }) => {
 
- const urlDetails = `./item/`
+ const urlDetails = `./item/${id}`
 
   return (
     <div className="card-container">
@@ -16,12 +16,12 @@ const Item = ({ image, title, price, stock, item }) => {
         <h2 className="tittle-card">{}id</h2>
         <p className="eth">${price}</p>
        <div> <ItemCount stock={stock} /> </div>
-       <link to={urlDetails}> 
+       <Link to={urlDetails}> 
           <button
             class="boton btn btn-warning">
             Ver Detalle
           </button>
-         </link>
+         </Link>
       </header>
     </div>
   );
