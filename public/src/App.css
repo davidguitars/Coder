@@ -20,9 +20,11 @@ body {
 /* Header */
 
 .navbarContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgb(0, 18, 41) !important;
     width: 100% !important;
-    max-width: 1600px;
 }
 
 nav,

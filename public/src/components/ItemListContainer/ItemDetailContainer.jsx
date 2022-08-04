@@ -7,7 +7,7 @@ const ItemListContainer = () => {
 
   const [products, setProducts] = useState({})
   const {itemId} = useParams()
-  console.log(itemId)
+ 
 
   useEffect(() => {
       setProducts([
@@ -110,7 +110,7 @@ const ItemListContainer = () => {
 
         
       ])
-  }, {}.find)
+  }, {})
 
 
 
