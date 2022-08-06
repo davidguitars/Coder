@@ -1,41 +1,39 @@
-import React from "react";
-import { Link } from 'react-router-dom'
-import ItemCount from "../ItemCount"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount";
 
-
-
-
-const ItemDetail = ({ image, title, price, description, stock, cant}) => {
+ const ItemDetail =({image, title, price, description, stock }) => {
   
-   const onAdd = (cant) => {
-      setCant(cant);
-       addToCart(item, cant);
-     
- };
+  
+  const [cant, setCant] = useState(0);
+
+  const onAdd = (cant) => {
+    setCant(cant);
+    addToCart(item, cant);
+  };
 
   return (
+    
     <div className="card-container">
-      <header class="image-header">
-        <img className="image-main" src={image} />
+      <header className="image-header">
+        <img className="image-main" src={image}  />
         <h1>{title}</h1>
-        <h2 className="tittle-card">{}id</h2>
-        <p className="eth">${price}</p>
-       <span>  {description}</span>
-       <div> <ItemCount stock={stock} /> </div>
-      <button class="boton btn btn-warning">
-          
-           {
-                    cant === 0 ? 
-                    <ItemCount stock={item.stock} initial={1} onAdd={onAdd} /> 
-                    :
-                    <> <Link to={"/cart"}>Ir al carrito</Link></>
-                } 
-          </button>
-         
-     
+        <p className="eth">precio: ${price}</p>
+        <span>{description}</span>
+        <span>stock: {stock}</span>
+        <div className="boton btn btn-warning">
+          {cant === 0 ? (
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+          ) : (
+            <>
+              {" "}
+              <Link to={"/cart"}>Ir al carrito</Link>
+            </>
+          )}
+        </div>
       </header>
     </div>
-  );
+          );
 };
 
 export default ItemDetail;

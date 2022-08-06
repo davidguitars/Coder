@@ -13,7 +13,7 @@ const ItemList = ({ products }) => {
           description={producto.description}
           stock={producto.stock}
           id={producto.id}
-        />
+       item={producto}  />
       ))}
     </div>
   );

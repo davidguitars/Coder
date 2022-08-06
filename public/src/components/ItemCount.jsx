@@ -1,52 +1,39 @@
+import { useState } from "react";
+import Swal from 'sweetalert2';
 
-import { Alert } from 'bootstrap'
-import React, {useState, useEffect} from 'react'
-import Swal from 'sweetalert2'
 
-export default  function ItemCount() {
 
-const [countCard, setCountCard] = useState(0)
-useEffect(() => {
-    if (countCard > 1){
-        Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Producto Agregado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+function ItemCount({ stock, initial, onAdd }) {
+    const [count, setCount] = useState(initial);
+
+
+    const suma = () => {
+        if (count < stock)  {
+            setCount(count + 1)
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: `Stock máximo ${stock}`,
+            }
+            )
+        }
     }
-    
-    if(countCard < 1 ){
-        Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Producto borrado',
-            showConfirmButton: false,
-            timer: 1500
-          })
+    const resta = () => {
+        if (count > 0) {
+            setCount(count - 1)
+        }
     }
-
-
-}, [countCard])
-
-function handleCount () {
-    setCountCard(countCard-1)
-
-}
-function handleCountMore () {
-    setCountCard(countCard+1)
-
+    return (
+        <div className="count">
+            <div>
+                <button className="count__button" onClick={resta}>-</button>
+                <span className="count__content">{count}</span>
+                <button className="count__button" onClick={suma}>+</button>
+            </div>
+            <button className="btn btn-secondary" onClick={() => onAdd(count)}>Agregar al carrito</button>
+        </div>
+    );
 }
 
-  return (
-   <> <div className="contador__button">
-     <button disabled ={countCard === 0} onClick={handleCount}>-1 </button>
-     <span> {countCard}  </span>
-     <button  disabled ={countCard === 10}onClick={handleCountMore}>+1 </button>
-   </div>
-  
-   </>
-  )
-  }
 
+export default ItemCount;

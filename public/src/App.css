@@ -7,7 +7,13 @@
 body {
     height: 900px;
     color: white;
-    background-color: rgb(0, 18, 41);
+    background-image: url('https://images7.alphacoders.com/418/418027.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 5.95;
+    /* background-color: rgb(0, 18, 41);  */
 }
 
 .App {
@@ -27,14 +33,32 @@ body {
     width: 100% !important;
 }
 
-nav,
-a {
-    color: #e5e7eb !important;
+.nav__Content {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-content: flex-end !important;
 }
 
 nav,
 a:hover {
     color: #014b7c !important;
+}
+
+.contact_button {
+    color: rgb(233, 223, 223);
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.contact_button:hover {
+    border: none;
+    box-shadow: 0 0 20px #dfa803;
+}
+
+.fa-shopping-cart {
+    color: #ffc107;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 
@@ -63,7 +87,7 @@ a:hover {
 .image-main {
     position: relative;
     max-width: 100%;
-    height: 100%;
+    height: 300px;
     cursor: pointer;
     border-radius: 5%;
 }

@@ -15,24 +15,36 @@ const NavbarContent = () => {
     <div>
    <Navbar className="navbarContent" bg="light" expand="lg">
       <Container >
-        <Navbar.Brand href="/">Crypto card</Navbar.Brand>
+        <div>
+       
+       
+       
+          
+         <Navbar.Brand href="/">Crypto card</Navbar.Brand>
+        </div>
+       
         <Navbar.Toggle aria-controls="navbarScroll" />
+        <div className="nav__Content">
         <Navbar.Collapse id="navbarScroll">
-        
-           <Nav.Link href="/contact" >
-              Contact
-            </Nav.Link>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-          <CartWidget />
-        </Navbar.Collapse>
+        <div className="contact_button"> 
+        <Nav.Link href="/contact" >
+           Contact
+         </Nav.Link>
+        </div>
+       
+       <Form className="d-flex">
+         <Form.Control
+           type="search"
+           placeholder="Search"
+           className="me-2"
+           aria-label="Search"
+         />
+         <Button variant="outline-success">Search</Button>
+       </Form>
+       <CartWidget />
+     </Navbar.Collapse>
+        </div>
+      
       </Container>
     
     </Navbar>
